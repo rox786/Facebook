@@ -18,14 +18,14 @@ public class App
     public static void main( String[] args )
     {
     	
-        System.out.println( "Hello, testing facebook!" );
+        System.out.println( "Hello, testing facebook on Jenkins!" );
     	//initialize driver property
     	//System.setProperty("webdriver.chrome.driver","C:\\chromedriver-win64");
     	
     	//setup chrome options parameters
     	ChromeOptions chromeOptions = new ChromeOptions();
     	//headless to execute chrome as backend
-    	chromeOptions.addArguments("--headless");
+    	//chromeOptions.addArguments("--headless");
 
     	//initialize web driver
     	WebDriver webDriver = new ChromeDriver(chromeOptions);
@@ -46,8 +46,12 @@ public class App
     	//press "login"
  	   	webDriver.findElement(By.name("login")).click();
     	System.out.println( "Logging in" );
-
-    	webDriver.quit();
+    	try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+    	webDriver.close();
     	System.out.println( "web driver closing");
     }
 }
