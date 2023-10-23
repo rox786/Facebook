@@ -1,1 +1,4 @@
+/target/gen*
+/target/mav*
+/target/surefire*
 /target/
