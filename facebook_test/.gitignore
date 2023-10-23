@@ -3,3 +3,4 @@
 /target/surefire*
 /target/cla*
 /target/test*
+/target/
